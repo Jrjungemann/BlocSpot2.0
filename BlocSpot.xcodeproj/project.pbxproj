@@ -122,8 +122,8 @@
 		BE71C57E1A887FEF00B5EC13 /* MagicalRecordLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordLogging.h; sourceTree = "<group>"; };
 		BE71C57F1A887FEF00B5EC13 /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		BE71C5801A887FEF00B5EC13 /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
-		BE71C7D11A8895A600B5EC13 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryViewController.h; path = BlocSpot/CategoryViewController.h; sourceTree = "<group>"; };
-		BE71C7D21A8895A600B5EC13 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryViewController.m; path = BlocSpot/CategoryViewController.m; sourceTree = "<group>"; };
+		BE71C7D11A8895A600B5EC13 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		BE71C7D21A8895A600B5EC13 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		FC10C4A41A2242330031F784 /* BlocSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlocSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC10C4A81A2242330031F784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC10C4A91A2242330031F784 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -281,8 +281,6 @@
 		FC10C49B1A2242330031F784 = {
 			isa = PBXGroup;
 			children = (
-				BE71C7D11A8895A600B5EC13 /* CategoryViewController.h */,
-				BE71C7D21A8895A600B5EC13 /* CategoryViewController.m */,
 				BE71C5411A887FEF00B5EC13 /* MagicalRecord */,
 				FC7396751A772477009BD9C4 /* CoreData.framework */,
 				FC4CC1741A2254A800B6C475 /* MapKit.framework */,
@@ -304,8 +302,6 @@
 		FC10C4A61A2242330031F784 /* BlocSpot */ = {
 			isa = PBXGroup;
 			children = (
-				BE59308B1A883C3200931FEA /* InterestPoint.h */,
-				BE59308C1A883C3200931FEA /* InterestPoint.m */,
 				FC7396771A772523009BD9C4 /* PrefixHeader.pch */,
 				FC10C4AB1A2242330031F784 /* AppDelegate.h */,
 				FC10C4AC1A2242330031F784 /* AppDelegate.m */,
@@ -315,11 +311,15 @@
 				FCB30F2C1A85C771001DFAC3 /* ListView.m */,
 				FCC31C971A2E934F00228CBF /* MapViewController.h */,
 				FCC31C981A2E934F00228CBF /* MapViewController.m */,
+				BE71C7D11A8895A600B5EC13 /* CategoryViewController.h */,
+				BE71C7D21A8895A600B5EC13 /* CategoryViewController.m */,
 				FC7396781A7725F5009BD9C4 /* BlocSpot.xcdatamodeld */,
 				FC89B4F91A83065400647BAD /* InterestPointCategory.h */,
 				FC89B4FA1A83065400647BAD /* InterestPointCategory.m */,
 				FC73967E1A772A1E009BD9C4 /* Comment.h */,
 				FC73967F1A772A1E009BD9C4 /* Comment.m */,
+				BE59308B1A883C3200931FEA /* InterestPoint.h */,
+				BE59308C1A883C3200931FEA /* InterestPoint.m */,
 				FCCFE56E1A885A4A00207ED1 /* UIColorRGBValueTransformer.h */,
 				FCCFE56F1A885A4A00207ED1 /* UIColorRGBValueTransformer.m */,
 				FC10C4B41A2242330031F784 /* Images.xcassets */,
