@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "CoreData+MagicalRecord.h"
+#import "InterestPoint.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    // This has to go at the top since the view needs to access the coreDataStack when we initialize it
+    
+    [MagicalRecord setupCoreDataStack];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     
     ViewController *mapVC = [[ViewController alloc] init];
@@ -28,7 +33,6 @@
     
     [self.window makeKeyAndVisible];
     
-    [MagicalRecord setupCoreDataStack];
     
     return YES;
 }

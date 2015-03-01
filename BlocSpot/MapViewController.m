@@ -126,7 +126,7 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    NSLog(@"This is where you should have your segue happen for the %@ annotation", view.description);
+//    NSLog(@"This is where you should have your segue happen for the %@ annotation", view.description);
     
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext){
         
@@ -139,7 +139,7 @@
         
     } completion:^(BOOL success, NSError *error) {
         
-        NSLog(@"In the completion handler");
+//        NSLog(@"In the completion handler");
         
     }];
     

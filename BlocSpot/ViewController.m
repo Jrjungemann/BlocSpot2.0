@@ -22,6 +22,7 @@
 @property (strong, nonatomic) UIButton *goSearch;
 @property (strong, nonatomic) UIButton *cancelSearch;
 @property (strong, nonatomic) NSMutableArray *searchList;
+@property (nonatomic) NSInteger searchActive;
 
 // Navigation Buttons
 @property (strong, nonatomic) UIButton *mapButton;
@@ -187,6 +188,8 @@
         return;
     }
 
+    [self.mapViewController.view removeFromSuperview];
+    [self.categoryViewController.view removeFromSuperview];
     [self.searchField removeFromSuperview];
     [self.goSearch removeFromSuperview];
     [self.cancelSearch removeFromSuperview];
@@ -209,6 +212,8 @@
         return;
     }
     
+    [self.categoryViewController.view removeFromSuperview];
+    [self.listViewController.view removeFromSuperview];
     [self.searchField removeFromSuperview];
     [self.goSearch removeFromSuperview];
     [self.cancelSearch removeFromSuperview];
@@ -226,15 +231,26 @@
 }
 
 - (void)searchOpened:(id)sender {
-    [self.searchField removeFromSuperview];
-    [self.goSearch removeFromSuperview];
-    [self.cancelSearch removeFromSuperview];
     
-    [self.mapViewController.view setFrame:CGRectMake(0, 50, self.viewWidth, self.viewHeight - 114)];
-    [self.listViewController.view setFrame:CGRectMake(0, 50, self.viewWidth, self.viewHeight - 114)];
+    // Search Active == 0 for no search and 1 for a current search happening
     
-    [self.view addSubview:self.goSearch];
-    [self.view addSubview:self.searchField];
+    if (self.currentlyVisibleController == self.mapViewController) {
+        
+        [self.mapViewController.view setFrame:CGRectMake(0, 50, self.viewWidth, self.viewHeight - 114)];
+        
+    } else if (self.currentlyVisibleController == self.listViewController) {
+        
+        [self.listViewController.view setFrame:CGRectMake(0, 50, self.viewWidth, self.viewHeight -114)];
+        
+    }
+    
+    if (self.searchActive == 1) {
+        [self.view addSubview:self.cancelSearch];
+        [self.view addSubview:self.searchField];
+    } else {
+        [self.view addSubview:self.goSearch];
+        [self.view addSubview:self.searchField];
+    }
 }
 
 - (void)searchPressed:(id)sender {
@@ -243,11 +259,31 @@
         return;
     }
     
+    self.searchActive = 1;
+    
     [self.goSearch removeFromSuperview];
     
     if (self.currentlyVisibleController == self.mapViewController) {
         [self.mapViewController searchMapWith:self.searchField.text];
-    } //else if (self.currentlyVisibleController == self.listViewController)
+    } else if (self.currentlyVisibleController == self.listViewController) {
+        [self.categoryViewController.view removeFromSuperview];
+        [self.listViewController.view removeFromSuperview];
+        [self.searchField removeFromSuperview];
+        [self.goSearch removeFromSuperview];
+        [self.cancelSearch removeFromSuperview];
+        [self.categoriesLabel removeFromSuperview];
+        [self.addCategory removeFromSuperview];
+        
+        [self.mapViewController.view setFrame:CGRectMake(0, 50, self.viewWidth, self.viewHeight - 114)];
+        [self addChildViewController:self.mapViewController];
+        [self.childView addSubview:self.mapViewController.view];
+        [self.mapViewController didMoveToParentViewController:self];
+        [self.view addSubview:self.searchButton];
+        
+        self.currentlyVisibleController = self.mapViewController;
+        [self.mapViewController searchMapWith:self.searchField.text];
+
+    }
     
     [self.view addSubview:self.cancelSearch];
 }
@@ -257,6 +293,8 @@
     [self.cancelSearch removeFromSuperview];
     
     self.searchField.text = @"";
+    
+    self.searchActive = 0;
     
 //    TODO call into MapViewController
     if (self.currentlyVisibleController == self.mapViewController) {
@@ -272,6 +310,8 @@
         return;
     }
     
+    [self.mapViewController.view removeFromSuperview];
+    [self.listViewController.view removeFromSuperview];
     [self.goSearch removeFromSuperview];
     [self.searchButton removeFromSuperview];
     [self.searchField removeFromSuperview];
