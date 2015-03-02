@@ -126,7 +126,7 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-//    NSLog(@"This is where you should have your segue happen for the %@ annotation", view.description);
+    NSLog(@"This is where you should have your segue happen for the %@ annotation", view.description);
     
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext){
         
@@ -137,9 +137,11 @@
         selected.coordinate = self.selectedInterestPoint.coordinate;
         selected.comments = self.selectedInterestPoint.comments;
         
+        NSLog(@"Interest Point: %@", selected.description);
+
+        
     } completion:^(BOOL success, NSError *error) {
         
-//        NSLog(@"In the completion handler");
         
     }];
     

@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CoreData+MagicalRecord.h"
 
-@interface ListView : UIViewController //<UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
+@interface ListView : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
-//@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end

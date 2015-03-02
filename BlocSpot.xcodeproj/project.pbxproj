@@ -47,6 +47,7 @@
 		FC73967A1A7725F5009BD9C4 /* BlocSpot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC7396781A7725F5009BD9C4 /* BlocSpot.xcdatamodeld */; };
 		FC7396801A772A1E009BD9C4 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = FC73967F1A772A1E009BD9C4 /* Comment.m */; };
 		FC89B4FB1A83065400647BAD /* InterestPointCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FC89B4FA1A83065400647BAD /* InterestPointCategory.m */; };
+		FCAEE25D1AA3C18E00946E21 /* SaveInterestPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAEE25C1AA3C18E00946E21 /* SaveInterestPointViewController.m */; };
 		FCB30F2D1A85C771001DFAC3 /* ListView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB30F2C1A85C771001DFAC3 /* ListView.m */; };
 		FCC31C991A2E934F00228CBF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC31C981A2E934F00228CBF /* MapViewController.m */; };
 /* End PBXBuildFile section */
@@ -144,6 +145,8 @@
 		FC73967F1A772A1E009BD9C4 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		FC89B4F91A83065400647BAD /* InterestPointCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestPointCategory.h; sourceTree = "<group>"; };
 		FC89B4FA1A83065400647BAD /* InterestPointCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestPointCategory.m; sourceTree = "<group>"; };
+		FCAEE25B1AA3C18E00946E21 /* SaveInterestPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveInterestPointViewController.h; sourceTree = "<group>"; };
+		FCAEE25C1AA3C18E00946E21 /* SaveInterestPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveInterestPointViewController.m; sourceTree = "<group>"; };
 		FCB30F2B1A85C771001DFAC3 /* ListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListView.h; sourceTree = "<group>"; };
 		FCB30F2C1A85C771001DFAC3 /* ListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListView.m; sourceTree = "<group>"; };
 		FCC31C971A2E934F00228CBF /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -311,6 +314,8 @@
 				FCB30F2C1A85C771001DFAC3 /* ListView.m */,
 				FCC31C971A2E934F00228CBF /* MapViewController.h */,
 				FCC31C981A2E934F00228CBF /* MapViewController.m */,
+				FCAEE25B1AA3C18E00946E21 /* SaveInterestPointViewController.h */,
+				FCAEE25C1AA3C18E00946E21 /* SaveInterestPointViewController.m */,
 				BE71C7D11A8895A600B5EC13 /* CategoryViewController.h */,
 				BE71C7D21A8895A600B5EC13 /* CategoryViewController.m */,
 				FC7396781A7725F5009BD9C4 /* BlocSpot.xcdatamodeld */,
@@ -481,6 +486,7 @@
 				FC10C4AA1A2242330031F784 /* main.m in Sources */,
 				BE71C58F1A887FEF00B5EC13 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				BE71C5951A887FEF00B5EC13 /* MagicalRecord+Actions.m in Sources */,
+				FCAEE25D1AA3C18E00946E21 /* SaveInterestPointViewController.m in Sources */,
 				BE71C58B1A887FEF00B5EC13 /* NSManagedObject+MagicalRecord.m in Sources */,
 				BE71C58E1A887FEF00B5EC13 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				BE71C5891A887FEF00B5EC13 /* NSManagedObject+MagicalDataImport.m in Sources */,
