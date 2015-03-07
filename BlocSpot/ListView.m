@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "InterestPoint.h"
 #import "CoreData+MagicalRecord.h"
+#import "InterestPointTableViewCell.h"
 
 @interface ListView ()
 
@@ -18,6 +19,8 @@
 @end
 
 @implementation ListView
+
+@synthesize listView;
 
 - (void)loadView {
     self.view = [UIView new];
@@ -61,7 +64,7 @@
     NSLog(@"Configure Cell has Run");
     InterestPoint *interestPoint = [self.fetchedResultsController objectAtIndexPath:indexPath];
     // Update cell with interest point details
-    cell.textLabel.text = interestPoint.title;
+    cell.textLabel.text = interestPoint.name;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -86,13 +89,31 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [listView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"InterestPointCell"];
+    
     static NSString *CellIdentifier = @"InterestPointCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [[InterestPointTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
     
     // Configure the cell
     [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    // When a cell is selected, this gets called.
+}
+
+- (void)registerClass:(Class)cellClass forCellReuseIdentifier:(NSString *)identifier {
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -107,7 +128,7 @@
         return _fetchedResultsController;
     }
     
-    _fetchedResultsController = [InterestPoint MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:nil ascending:NO inContext:[NSManagedObjectContext MR_defaultContext]];
+    _fetchedResultsController = [InterestPoint MR_fetchAllSortedBy:@"name" ascending:NO withPredicate:nil groupBy:nil delegate:self];
     
     return _fetchedResultsController;
 }

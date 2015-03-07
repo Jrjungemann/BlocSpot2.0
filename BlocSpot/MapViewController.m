@@ -42,7 +42,7 @@
     self.userLocation = [[MKUserLocation alloc] init];
     
     self.mapView.userTrackingMode = YES;
-        
+    
     UIView *background = [[UIView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, viewHeight)];
     background.backgroundColor = [UIColor whiteColor];
     
@@ -107,16 +107,16 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
     /*
-     When it comes time to implement the custon callout, 
+     When it comes time to implement the custon callout,
      see http://stackoverflow.com/questions/15292318/mkmapview-mkpointannotation-tap-event
      */
     
     MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
     annotationView.canShowCallout = YES;
     annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    self.selectedInterestPoint = (InterestPoint *)annotationView.annotation;
     
-    // don't show current user location as the same pin type as POIs 
+    
+    // don't show current user location as the same pin type as POIs
     if ([annotation isMemberOfClass:[MKUserLocation class]]) {
         return  nil;
     }
@@ -126,27 +126,36 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
+    // self.selectedInterestPoint = (InterestPoint *)view.annotation;
+    InterestPoint *selected = [InterestPoint MR_createEntity];
+    selected = (InterestPoint *)view.annotation;
+    InterestPoint *saved = [InterestPoint MR_createEntity];
+    
+    saved.name = selected.name;
+    saved.xCoordinate = selected.xCoordinate;
+    saved.yCoordinate = selected.yCoordinate;
+    saved.coordinate = selected.coordinate;
+    saved.comments = selected.comments;
+    
+    [selected MR_deleteEntity];
+//    selected.name = self.selectedInterestPoint.name;
+//    selected.xCoordinate = self.selectedInterestPoint.xCoordinate;
+//    selected.yCoordinate =self.selectedInterestPoint.yCoordinate;
+//    selected.coordinate = self.selectedInterestPoint.coordinate;
+//    selected.comments = self.selectedInterestPoint.comments;
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    
+    
+    NSLog(@"Interest Point: %@", selected.description);
+    
     NSLog(@"This is where you should have your segue happen for the %@ annotation", view.description);
     
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext){
-        
-        InterestPoint *selected = [InterestPoint MR_createEntity];
-        selected.name = self.selectedInterestPoint.name;
-        selected.xCoordinate = self.selectedInterestPoint.xCoordinate;
-        selected.yCoordinate =self.selectedInterestPoint.yCoordinate;
-        selected.coordinate = self.selectedInterestPoint.coordinate;
-        selected.comments = self.selectedInterestPoint.comments;
-        
-        NSLog(@"Interest Point: %@", selected.description);
-
-        
-    } completion:^(BOOL success, NSError *error) {
-        
-        
-    }];
+    
+    
     
     //[self performSegueWithIdentifier:@"DetailsIphone" sender:self];
-
+    
     // be sure to send the annotation object to the next view in the prepareForSegue method.
     // then create a new Interest Point object, e.g.:
     // InterestPoint *interestPoint = [InterestPoint MR_createEntityInContext:nil];

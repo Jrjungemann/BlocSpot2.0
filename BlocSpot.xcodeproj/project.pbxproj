@@ -43,6 +43,7 @@
 		FC10C4B81A2242330031F784 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC10C4B61A2242330031F784 /* LaunchScreen.xib */; };
 		FC10C4C41A2242330031F784 /* BlocSpotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC10C4C31A2242330031F784 /* BlocSpotTests.m */; };
 		FC4CC1751A2254A800B6C475 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4CC1741A2254A800B6C475 /* MapKit.framework */; };
+		FC52CA2E1AA7FEB5000C239F /* InterestPointTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC52CA2D1AA7FEB5000C239F /* InterestPointTableViewCell.m */; };
 		FC7396761A772477009BD9C4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7396751A772477009BD9C4 /* CoreData.framework */; };
 		FC73967A1A7725F5009BD9C4 /* BlocSpot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC7396781A7725F5009BD9C4 /* BlocSpot.xcdatamodeld */; };
 		FC7396801A772A1E009BD9C4 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = FC73967F1A772A1E009BD9C4 /* Comment.m */; };
@@ -138,6 +139,8 @@
 		FC10C4C21A2242330031F784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC10C4C31A2242330031F784 /* BlocSpotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlocSpotTests.m; sourceTree = "<group>"; };
 		FC4CC1741A2254A800B6C475 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FC52CA2C1AA7FEB5000C239F /* InterestPointTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestPointTableViewCell.h; sourceTree = "<group>"; };
+		FC52CA2D1AA7FEB5000C239F /* InterestPointTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestPointTableViewCell.m; sourceTree = "<group>"; };
 		FC7396751A772477009BD9C4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FC7396771A772523009BD9C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FC7396791A7725F5009BD9C4 /* BlocSpot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BlocSpot.xcdatamodel; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 				FC10C4AF1A2242330031F784 /* ViewController.m */,
 				FCB30F2B1A85C771001DFAC3 /* ListView.h */,
 				FCB30F2C1A85C771001DFAC3 /* ListView.m */,
+				FC52CA2C1AA7FEB5000C239F /* InterestPointTableViewCell.h */,
+				FC52CA2D1AA7FEB5000C239F /* InterestPointTableViewCell.m */,
 				FCC31C971A2E934F00228CBF /* MapViewController.h */,
 				FCC31C981A2E934F00228CBF /* MapViewController.m */,
 				FCAEE25B1AA3C18E00946E21 /* SaveInterestPointViewController.h */,
@@ -497,6 +502,7 @@
 				BE71C5931A887FEF00B5EC13 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				FCB30F2D1A85C771001DFAC3 /* ListView.m in Sources */,
 				BE71C5901A887FEF00B5EC13 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
+				FC52CA2E1AA7FEB5000C239F /* InterestPointTableViewCell.m in Sources */,
 				BE59308D1A883C3200931FEA /* InterestPoint.m in Sources */,
 				BE71C5861A887FEF00B5EC13 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				FC89B4FB1A83065400647BAD /* InterestPointCategory.m in Sources */,

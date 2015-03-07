@@ -27,9 +27,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     
-    ViewController *mapVC = [[ViewController alloc] init];
+    ViewController *mainView = [[ViewController alloc] init];
     
-    self.window.rootViewController = mapVC;
+    self.window.rootViewController = mainView;
     
     [self.window makeKeyAndVisible];
     
